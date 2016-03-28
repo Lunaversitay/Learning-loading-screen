@@ -34,7 +34,7 @@ $steamcoded = $steamcoded2["response"]["players"][0];
 // Now that we have grabbed all our information from steam we are now free to start using it
 // Everything you need to know is here https://developer.valvesoftware.com/wiki/Steam_Web_API this is where you will use things such as a username or image. I'm going to deminstrate an image and a username sync with steam.
 
-$steamprofileimg = '<img src="'.$steamdecoded['avatarfull'].'" width="184px" height="184px"></img>'; // This will use the full image such as the one on the main page of someone's community profile
+$steamprofileimg = $steamdecoded['avatarfull']; // This will use the full image such as the one on the main page of someone's community profile
 
 //Now let's start our persona username with steam.
 // This is the Steam Username that will display in text pretty self explanitory.

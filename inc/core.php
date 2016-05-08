@@ -25,9 +25,9 @@ $steamid64 = '76561198074425791'; // This will call our Steam ID 64 and then all
 $steamdirect = "http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=" . $SteamAPIKey . "&steamids=" . $iamsteam; // This will point our code in the right direction for our loading screen to sync the information on steam
 
 // We're gonna use this to gather content from our steamid 64
-$jason = file_get_contents($iamsteam);
+$json = file_get_contents($iamsteam);
 // Now we're going to have our program decode that content
-$steamdecoded1 = json_decode($jason, true);
+$steamdecoded1 = json_decode($json, true);
 // Finally let's finish off our information grabbing with this
 $steamcoded = $steamcoded2["response"]["players"][0];
 

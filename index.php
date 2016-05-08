@@ -16,7 +16,7 @@
 <!-- So we have everything intact such as our steam being synced to our loading screen, remember you should only see the ID you put in the $steamid64 on your browser.
   
  This example will show you how to echo out a steam username -->
-<h1>Welcome, <?php echo $username; ?> to Friends Gaming</h1> // This will print out in H1 text Welcome, {Steam_Username} to Friends Gaming
+<h1>Welcome, <?php echo $username; ?> to Friends Gaming</h1> <!-- This will print out in H1 text Welcome, {Steam_Username} to Friends Gaming -->
 
 <!-- Now here is an example of a profile image -->
 <img src='<?php echo $steamprofileimg; ?>'> <!-- This will use the steam profile image that the user has set on their account.

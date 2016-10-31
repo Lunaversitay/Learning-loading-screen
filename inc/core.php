@@ -11,15 +11,13 @@ include('config.php') // This will include our config file from the root folder
 error_reporting(0); // I'd recommend keeping this at 0
 
 // Now we need to call our Steam 64 ID
-$steamid64 = '76561198074425791'; // This will call our Steam ID 64 and then allow us to continue on with syncing information with steam
-
-// Now we call our steam id 64 into our code
-// You can name the $iamsteam whatever you want as long as you replace all of the existing $iamsteam with the name you pick and replace
-	if(!isset($_GET["steamid"])){
-		$iamsteam = $steamid64;
-	} else {
-		$iamsteam = $_GET["steamid"];
-	}
+if(!isset($_GET['steamid'])){
+	// If you're not in-game, use this to define a default steam id.
+	$steam64 = '76561198074425791';
+} else {
+	// If you are in-game, then this will fetch the steam id from the loading screen.
+	$steam64 = $_GET['steamid'];
+}
 
 // Now let's point our code in the right direction
 $steamdirect = "http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=" . $SteamAPIKey . "&steamids=" . $iamsteam; // This will point our code in the right direction for our loading screen to sync the information on steam

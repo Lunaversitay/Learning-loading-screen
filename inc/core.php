@@ -7,26 +7,26 @@
 //Include config.php
 include('config.php') // This will include our config file from the root folder
 
-// There may be errors so we want to turn those off before we continue
-error_reporting(0); // I'd recommend keeping this at 0
+// Steam will output errors that we don't need to worry about cause of the method
+error_reporting(0);
 
-// Now we need to call our Steam 64 ID
+// Grab steamid from the url
 if(!isset($_GET['steamid'])){
-	// If you're not in-game, use this to define a default steam id.
+	// this will be defined as the default steamid if you're not in-game
 	$steam64 = '76561198074425791';
 } else {
-	// If you are in-game, then this will fetch the steam id from the loading screen.
+	// If you're in-game then use =%s and it will fetch the id from there
 	$steam64 = $_GET['steamid'];
 }
 
-// Now let's point our code in the right direction
+// get our url to the steam api
 $steamdirect = "http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=" . $SteamAPIKey . "&steamids=" . $iamsteam; // This will point our code in the right direction for our loading screen to sync the information on steam
 
-// We're gonna use this to gather content from our steamid 64
+// Get our contents
 $json = file_get_contents($iamsteam);
-// Now we're going to have our program decode that content
+// Decode the contents cause the api is automatically in json format
 $steamdecoded1 = json_decode($json, true);
-// Finally let's finish off our information grabbing with this
+// Make a handle to easily echo the api information we want to display
 $steamcoded = $steamcoded2["response"]["players"][0];
 
 // Now that we have grabbed all our information from steam we are now free to start using it
@@ -37,6 +37,3 @@ $steamprofileimg = $steamdecoded['avatarfull']; // This will use the full image 
 //Now let's start our persona username with steam.
 // This is the Steam Username that will display in text pretty self explanitory.
 $username = $steamdecoded['personaname'];
-
-//Now let's close off our session
-?>

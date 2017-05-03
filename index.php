@@ -22,5 +22,9 @@
 <img src='<?php echo $steamprofileimg; ?>'> <!-- This will use the steam profile image that the user has set on their account.
 // Note: I edited the core file cause using the src is easier to modify instead of going back into core.php
 Note one more thing: Don't forget commenting with // works in PHP not html, I made that mistake already :( -->
+    
+    <!-- want cancerous music on your loading screen? here's how to use the youtube shit: -->
+    <iframe width="0" height="0" src="https://www.youtube.com/embed/<?php echo $youtube_url; ?>?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+    
   </body>
 </html>

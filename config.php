@@ -5,9 +5,6 @@
 
 // Here we are going to add our SteamAPI key, this is essential for everything to sync with steam. No-one can see this but you and people with direct access to your FTP
 // Steam API Key
-$SteamAPIKey = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+$SteamAPIKey = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
 
-
-// We need to end our PHP session with this line
-// Now navigate your self to the 'inc' folder then to 'core.php' and we'll continue
-?>
+$youtube_url = "Owpo-xHHhyU"; // youtube url that's located into the index.php
